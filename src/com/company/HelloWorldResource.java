@@ -1,8 +1,6 @@
 package com.company;
 
-import com.google.common.base.Optional;
 import com.codahale.metrics.annotation.Timed;
-import io.dropwizard.setup.Environment;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -14,13 +12,9 @@ import java.util.concurrent.atomic.AtomicLong;
 @Path("/hello-world")
 @Produces({MediaType.APPLICATION_JSON})
 public class HelloWorldResource {
-    private final String template;
-    private final String defaultName;
     private final AtomicLong counter;
 
-    public HelloWorldResource(String template, String defaultName) {
-        this.template = template;
-        this.defaultName = defaultName;
+    public HelloWorldResource() {
         this.counter = new AtomicLong();
     }
 

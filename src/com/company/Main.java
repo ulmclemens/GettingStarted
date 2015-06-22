@@ -20,10 +20,10 @@ public class Main extends Application<GettingStartedConfiguration> {
 
     @Override
     public void run(GettingStartedConfiguration configuration,Environment environment) {
-        HelloWorldResource resource = new HelloWorldResource( configuration.getTemplate(), configuration.getDefaultName() );
+        HelloWorldResource resource = new HelloWorldResource();
         environment.jersey().register(resource);
 
-        ReportResource resource1 = new ReportResource( configuration.getTemplate(), configuration.getDefaultName() );
+        ReportResource resource1 = new ReportResource();
         environment.jersey().register(resource1);
 
     }
