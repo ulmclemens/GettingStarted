@@ -1,11 +1,10 @@
 package com.company;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.Length;
 
 
 public class Saying {
-    long id;
-    String content;
+    private long id;
+    private String content;
 
     public Saying() {
         // Jackson deserialization

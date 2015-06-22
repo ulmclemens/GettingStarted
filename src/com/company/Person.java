@@ -1,12 +1,11 @@
 package com.company;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  * Created by Ulm.Clemens on 22-Jun-15.
  */
 public class Person {
-    String name;
+    private String name;
+
     public Person() {
     }
 
