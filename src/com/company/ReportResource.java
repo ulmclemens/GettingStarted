@@ -27,38 +27,11 @@ public class ReportResource {
 
     @GET
     @Produces("text/html")
-    public String sayReport(@QueryParam("name") String person) {
-        String value;
-        if (person == null || person.equals("")) {
-            value = ("<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "<head>\n" +
-                    "<title>Page Title</title>\n" +
-                    "</head>\n" +
-                    "<body>\n" +
-                    "\n" +
-                    "<h1>Report</h1>\n" +
-                    "<p>Name: Anonymous.<br>hi\n" +
-                    "</p>\n" +
-                    "\n" +
-                    "</body>\n" +
-                    "</html>");
-        } else {
-            value = ("<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "<head>\n" +
-                    "<title>Page Title</title>\n" +
-                    "</head>\n" +
-                    "<body>\n" +
-                    "\n" +
-                    "<h1>Report</h1>\n" +
-                    "<p>Name: "+person+".<br>hi\n" +
-                    "</p>\n" +
-                    "\n" +
-                    "</body>\n" +
-                    "</html>");
-        }
-        return value;
+    public PersonView sayReport(@QueryParam("name") String name) {
+        Person person = new Person();
+        person.setName(name);
+        PersonView personView = new PersonView(person);
+        return personView;
     }
 
 
