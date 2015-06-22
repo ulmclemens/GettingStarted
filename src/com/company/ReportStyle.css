@@ -1,3 +1,31 @@
 body {
     background-color: lightblue;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+p {
+    margin: 0;
+}
+
+.customer-name {
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+.reminder {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+
+.amount {
+    text-align: right;
+}
+
+thead tr td {
+    border-bottom: 1px solid black;
+}
