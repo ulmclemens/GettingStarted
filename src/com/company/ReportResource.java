@@ -26,17 +26,42 @@ public class ReportResource {
     }
 
     @GET
-    @Timed
-
-    public Saying sayReport(@QueryParam("name") String person) {
+    @Produces("text/html")
+    public String sayReport(@QueryParam("name") String person) {
         String value;
         if (person == null || person.equals("")) {
-            value = ("Do you want to report something??");
+            value = ("<!DOCTYPE html>\n" +
+                    "<html>\n" +
+                    "<head>\n" +
+                    "<title>Page Title</title>\n" +
+                    "</head>\n" +
+                    "<body>\n" +
+                    "\n" +
+                    "<h1>Report</h1>\n" +
+                    "<p>Name: Anonymous.<br>hi\n" +
+                    "</p>\n" +
+                    "\n" +
+                    "</body>\n" +
+                    "</html>");
         } else {
-            value = String.format("I heared you, " + person + ", wants to report something");
+            value = ("<!DOCTYPE html>\n" +
+                    "<html>\n" +
+                    "<head>\n" +
+                    "<title>Page Title</title>\n" +
+                    "</head>\n" +
+                    "<body>\n" +
+                    "\n" +
+                    "<h1>Report</h1>\n" +
+                    "<p>Name: "+person+".<br>hi\n" +
+                    "</p>\n" +
+                    "\n" +
+                    "</body>\n" +
+                    "</html>");
         }
-        return new Saying(counter.incrementAndGet(), value);
+        return value;
     }
+
+
 
 
 }
