@@ -1,9 +1,6 @@
 package com.company;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -11,7 +8,7 @@ import java.util.List;
 
 @Path("/report")
 @Produces(MediaType.APPLICATION_JSON)
-public class ReportResource {
+public class InvoiceResourceHTML {
 
     private String senderName = "Stephanie";
     private String senderAddress = "Somewhere on Earth";
@@ -21,12 +18,12 @@ public class ReportResource {
 
 
 
-    public ReportResource() {
+    public InvoiceResourceHTML() {
     }
 
-    @GET
+    @POST
     @Produces("text/html")
-    public InvoiceView sayReport(@QueryParam("receiverName") String receiverName, @QueryParam("receiverAdress") String receiverAdress, @QueryParam("receiverCompanyName") String receiverCompanyName) {
+    public InvoiceView sayReport(@FormParam("receiverName") String receiverName, @FormParam("receiverAdress") String receiverAdress, @FormParam("receiverCompanyName") String receiverCompanyName) {
         Receiver receiver1 = new Receiver(receiverName, receiverAdress, receiverCompanyName);
         Sender sender1 = new Sender(senderName,senderAddress,senderEmail,senderTelephone,senderCompanyName);
 
@@ -39,8 +36,5 @@ public class ReportResource {
         InvoiceView invoiceView = new InvoiceView(receiver1 , sender1 , bill1);
         return invoiceView;
     }
-
-
-
 
 }

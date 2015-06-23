@@ -26,8 +26,12 @@ public class Main extends Application<GettingStartedConfiguration> {
         HelloWorldResource resource = new HelloWorldResource();
         environment.jersey().register(resource);
 
-        ReportResource resource1 = new ReportResource();
+        InvoiceResourceHTML resource1 = new InvoiceResourceHTML();
         environment.jersey().register(resource1);
+
+        InvoiceResourceXML resource2 = new InvoiceResourceXML();
+        environment.jersey().register(resource2);
+
         environment.jersey().register(MultiPartFeature.class);
 
     }

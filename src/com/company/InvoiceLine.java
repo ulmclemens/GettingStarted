@@ -1,6 +1,9 @@
 package com.company;
 
 
+import org.w3c.dom.*;
+
+
 import java.math.BigDecimal;
 
 public class InvoiceLine {
@@ -8,6 +11,8 @@ public class InvoiceLine {
     private BigDecimal amount;
     private BigDecimal rate;
     private BigDecimal total;
+
+
 
     public InvoiceLine(String nDescription, BigDecimal nAmount, BigDecimal nRate) {
         description = nDescription;
