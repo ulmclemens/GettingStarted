@@ -6,6 +6,7 @@ import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 
 public class Main extends Application<GettingStartedConfiguration> {
@@ -25,8 +26,9 @@ public class Main extends Application<GettingStartedConfiguration> {
         HelloWorldResource resource = new HelloWorldResource();
         environment.jersey().register(resource);
 
-        InvoiceResource resource1 = new InvoiceResource();
+        ReportResource resource1 = new ReportResource();
         environment.jersey().register(resource1);
+        environment.jersey().register(MultiPartFeature.class);
 
     }
 
