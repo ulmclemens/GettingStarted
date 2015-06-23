@@ -1,20 +1,22 @@
 package com.company;
 
 
+import java.math.BigDecimal;
+
 public class InvoiceLine {
     private String description;
-    private double amount;
-    private double rate;
-    private double total;
+    private BigDecimal amount;
+    private BigDecimal rate;
+    private BigDecimal total;
 
-    public InvoiceLine(String nDescription, double nAmount, double nRate) {
+    public InvoiceLine(String nDescription, BigDecimal nAmount, BigDecimal nRate) {
         description = nDescription;
         amount = nAmount;
         rate = nRate;
-        total = (rate*amount);
+        total = amount.multiply(rate);
     }
 
-    public InvoiceLine(String nDescription, double nAmount, double nRate , double nTotal) {
+    public InvoiceLine(String nDescription, BigDecimal nAmount, BigDecimal nRate , BigDecimal nTotal) {
 
         description = nDescription;
         amount = nAmount;
@@ -26,15 +28,15 @@ public class InvoiceLine {
         return description;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public double getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 
-    public double getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 

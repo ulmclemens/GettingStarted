@@ -5,7 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,8 +34,8 @@ public class InvoiceResource {
         Receiver receiver1 = new Receiver(receiverName, receiverAdress, receiverCompanyName);
         Sender sender1 = new Sender(senderName,senderAddress,senderEmail,senderTelephone,senderCompanyName);
 
-        InvoiceLine line1 = new InvoiceLine("Stuff", 14, 75, 5000000);
-        InvoiceLine line2 = new InvoiceLine("More stuff", 34, 34, 34000);
+        InvoiceLine line1 = new InvoiceLine("Stuff", BigDecimal.valueOf(14), BigDecimal.valueOf(75), BigDecimal.valueOf(5000000));
+        InvoiceLine line2 = new InvoiceLine("More stuff", BigDecimal.valueOf(34), BigDecimal.valueOf(34), BigDecimal.valueOf(34000));
 
         List<InvoiceLine> lines = Arrays.asList(line1, line2);
         Bill bill1 = new Bill(lines);
