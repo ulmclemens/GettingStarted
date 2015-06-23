@@ -2,7 +2,7 @@
 <html>
    <head>
       <link rel="stylesheet" type="text/css" href="/assets/ReportStyle.css">
-      <title>Page Title</title>
+      <title>Invoice Template 1</title>
    </head>
    <body>
       <h1 class="title">Publysher</h1>
