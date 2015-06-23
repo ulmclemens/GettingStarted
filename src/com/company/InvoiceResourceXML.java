@@ -16,6 +16,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
@@ -28,7 +29,7 @@ public class InvoiceResourceXML {
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("text/html")
-    public InvoiceView processInvoice(@FormDataParam("xml") final InputStream inputStream, @FormDataParam("xml") final FormDataContentDisposition contentDispositionHeader) throws ParserConfigurationException, IOException, SAXException {
+    public InvoiceView processInvoice(@FormDataParam("xml") final InputStream inputStream, @FormDataParam("xml") final FormDataContentDisposition contentDispositionHeader) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException {
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(inputStream);
 
         List listA = new GetDataFromXML().GetDataFromXML(document);

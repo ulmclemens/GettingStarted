@@ -10,20 +10,17 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class InvoiceResourceHTML {
 
-    private String senderName = "Stephanie";
-    private String senderAddress = "Somewhere on Earth";
-    private String senderEmail = "someone.someone@hotmail.com";
-    private String senderTelephone = "07392743190";
-    private String senderCompanyName = "Yahoo";
-
-
 
     public InvoiceResourceHTML() {
     }
 
     @POST
     @Produces("text/html")
-    public InvoiceView sayReport(@FormParam("receiverName") String receiverName, @FormParam("receiverAdress") String receiverAdress, @FormParam("receiverCompanyName") String receiverCompanyName) {
+    public InvoiceView sayReport(@FormParam("receiverName") String receiverName, @FormParam("receiverAdress") String receiverAdress,
+                                 @FormParam("receiverCompanyName") String receiverCompanyName, @FormParam("senderName") String senderName,
+                                 @FormParam("senderAddress") String senderAddress,@FormParam("senderEmail") String senderEmail,
+                                 @FormParam("senderTelephone") String senderTelephone,@FormParam("senderCompanyName") String senderCompanyName) {
+
         Receiver receiver1 = new Receiver(receiverName, receiverAdress, receiverCompanyName);
         Sender sender1 = new Sender(senderName,senderAddress,senderEmail,senderTelephone,senderCompanyName);
 
