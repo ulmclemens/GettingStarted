@@ -13,10 +13,6 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class InvoiceResource {
 
-    private String receiverName;
-    private String receiverAddress;
-    private String receiverCompanyName;
-
     private String senderName = "Stephanie";
     private String senderAddress = "Somewhere on Earth";
     private String senderEmail = "someone.someone@hotmail.com";

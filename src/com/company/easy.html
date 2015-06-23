@@ -1,0 +1,35 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="page-header">Invoice Generator</h1>
+
+    <form method="GET" action="/report">
+        <div class="form-group">
+            <label for="receiverName">
+                Name
+            </label>
+            <input class="form-control" id="receiverName" type="text" name="receiverName"/>
+        </div>
+
+        <div class="form-group">
+            <label for="receiverAdress">
+                Address
+            </label>
+            <input class="form-control" id="receiverAdress" type="text" name="receiverAdress"/>
+        </div>
+
+        <div class="form-group">
+            <label for="receiverCompanyName">
+                Company
+            </label>
+            <input class="form-control" id="receiverCompanyName" type="text" name="receiverCompanyName"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generate Invoice</button>
+    </form>
+</div>
+</body>
+</html>
