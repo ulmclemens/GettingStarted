@@ -16,13 +16,27 @@ public class InvoiceResourceHTML {
 
     @POST
     @Produces("text/html")
-    public InvoiceView sayReport(@FormParam("receiverName") String receiverName, @FormParam("receiverAdress") String receiverAdress,
-                                 @FormParam("receiverCompanyName") String receiverCompanyName, @FormParam("senderName") String senderName,
-                                 @FormParam("senderAddress") String senderAddress,@FormParam("senderEmail") String senderEmail,
-                                 @FormParam("senderTelephone") String senderTelephone,@FormParam("senderCompanyName") String senderCompanyName) {
+    public InvoiceView sayReport(
+                                 @FormParam("receiverName") String receiverName,
+                                 @FormParam("receiverAdress") String receiverAdress,
+                                 @FormParam("recieverPostalCode") String recieverPostalCode,
+                                 @FormParam("receiverCompanyName") String receiverCompanyName,
+                                 @FormParam("senderName") String senderName,
+                                 @FormParam("receiverOrderRefereceID") String receiverOrderRefereceID,
+                                 @FormParam("senderAddress") String senderAddress,
+                                 @FormParam("senderPostalCode") String senderPostalCode,
+                                 @FormParam("senderEmail") String senderEmail,
+                                 @FormParam("senderTelephone") String senderTelephone,
+                                 @FormParam("senderCompanyName") String senderCompanyName,
+                                 @FormParam("senderCompanyIdentification") String senderCompanyIdentification,
+                                 @FormParam("bankAccount") String bankAccount,
+                                 @FormParam("vatNumber") String vatNumber,
+                                 @FormParam("issueDate") String issueDate,
+                                 @FormParam("id") String id
+    ) {
 
-        Receiver receiver1 = new Receiver(receiverName, receiverAdress, receiverCompanyName);
-        Sender sender1 = new Sender(senderName,senderAddress,senderEmail,senderTelephone,senderCompanyName);
+        Receiver receiver1 = new Receiver(receiverName, receiverAdress,recieverPostalCode, receiverCompanyName, receiverOrderRefereceID);
+        Sender sender1 = new Sender(senderName,senderAddress,senderPostalCode,senderEmail,senderTelephone,senderCompanyName, senderCompanyIdentification, bankAccount,vatNumber);
 
         InvoiceLine line1 = new InvoiceLine("Stuff", BigDecimal.valueOf(14), BigDecimal.valueOf(75), BigDecimal.valueOf(5000000));
         InvoiceLine line2 = new InvoiceLine("More stuff", BigDecimal.valueOf(34), BigDecimal.valueOf(34), BigDecimal.valueOf(34000));
@@ -30,7 +44,7 @@ public class InvoiceResourceHTML {
         List<InvoiceLine> lines = Arrays.asList(line1, line2);
         Bill bill1 = new Bill(lines);
 
-        InvoiceView invoiceView = new InvoiceView(receiver1 , sender1 , bill1);
+        InvoiceView invoiceView = new InvoiceView(receiver1 , sender1 , bill1, issueDate, id);
         return invoiceView;
     }
 

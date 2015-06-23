@@ -8,8 +8,8 @@
       <h1 class="title">Publysher</h1>
       <h2 class="subTitle">Factuur </h2>
       <p class="customer-name">${receiver.companyName}</p>
-      <p class="TxtBoxFactuurnummer">Datum: 07-05-2015<br>Referentie: QA9823-7<br>Factuurnummer: 20200017</p>
-      <p>t.a.v. ${receiver.name} <br> ${receiver.address} <br> 1028 QX Amsterdam</p>
+      <p class="TxtBoxFactuurnummer">${issueDate}<br>Referentie: ${receiver.orderReferenceID}<br>Factuurnummer: ${id}</p>
+      <p>t.a.v. ${receiver.name} <br> ${receiver.streetName} <br> ${receiver.postalCode}</p>
 
       <table class="table">
          <thead>
@@ -20,7 +20,6 @@
                <td class="amount">Bedrag </td>
             </tr>
          </thead>
-         <!--USER DEFINED START: -->
          <tbody>
          <#list bill.invoiceLines as line>
              <tr>
@@ -32,7 +31,6 @@
          </#list>
 
          </tbody>
-         <!--:USER DEFINED END -->
          <tfoot>
          <tr class="footspacer">
              <td>
@@ -60,8 +58,8 @@
 
       <p class="reminder">U wordt verzocht dit bedrag binnen 30 dagen onder vermelding van het factuurnummer over te maken op rekening NL47 INGB 0006 9208 03 t.n.v. Publysher </p>
       <p class="bottomCompanyName"> ${sender.companyName} <p>
-      <p class="KvKreminder">KvK: 55504035 <br> BTW nummer: 1914.08.049.B.01 <br>ING: NL47 INGB 0006 9208 03 </p>
-      <p class="bottomAdress">${sender.address} <br>1061 VB Amsterdam </p>
+      <p class="KvKreminder">KvK: ${sender.companyIdentification}<br> BTW nummer: ${sender.vatNumber}<br>Bank: ${sender.bankAccount}</p>
+      <p class="bottomAdress">${sender.address} <br> ${sender.postalCode} </p>
       <p class="bottomTelephone">T: ${sender.telephone} <br>E: ${sender.email} </p>
    </body>
 </html>

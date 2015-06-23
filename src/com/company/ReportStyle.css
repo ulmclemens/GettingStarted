@@ -37,6 +37,7 @@ font-style: italic;
 .KvKreminder {
     margin-top: 50px;
     float: right;
+    text-align: right;
 }
 .TxtBoxFactuurnummer{
     text-align: right;

@@ -45,6 +45,9 @@
 					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
+            <cac:PartyIdentification>
+                <cbc:ID>3759759732957</cbc:ID>
+            </cac:PartyIdentification>
 			<cac:Contact>
 				<cbc:Name>Mrs Bouquet</cbc:Name>
 				<cbc:Telephone>0158 1233714</cbc:Telephone>
@@ -62,8 +65,8 @@
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
-				<cbc:BuildingName>Thereabouts</cbc:BuildingName>
-				<cbc:BuildingNumber>56A</cbc:BuildingNumber>
+				<cbc:BuildingName>House 2</cbc:BuildingName>
+				<cbc:BuildingNumber>85B</cbc:BuildingNumber>
 				<cbc:CityName>Bridgtow</cbc:CityName>
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
@@ -129,8 +132,7 @@
 						<cbc:BuildingNumber>12</cbc:BuildingNumber>
 						<cbc:CityName>London</cbc:CityName>
 						<cbc:PostalZone>AQ1 6TH</cbc:PostalZone>
-						<cbc:CountrySubentity>London
-</cbc:CountrySubentity>
+						<cbc:CountrySubentity>London</cbc:CountrySubentity>
 						<cac:AddressLine>
 							<cbc:Line>5th Floor</cbc:Line>
 						</cac:AddressLine>

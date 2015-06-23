@@ -6,12 +6,16 @@ public class InvoiceView extends View {
     private Receiver receiver;
     private Sender sender;
     private Bill bill;
+    private String issueDate;
+    private String id;
 
-    public InvoiceView(Receiver nReceiver, Sender nSender , Bill nBill) {
+    public InvoiceView(Receiver nReceiver, Sender nSender , Bill nBill,String nIssueDate, String nid) {
         super("report.ftl");
         receiver = nReceiver;
         sender = nSender;
         bill = nBill;
+        issueDate = nIssueDate;
+        id = nid;
     }
 
     public Receiver getReceiver() {
@@ -24,5 +28,12 @@ public class InvoiceView extends View {
 
     public Sender getSender() {
         return sender;
+    }
+
+    public String getIssueDate() {
+        return issueDate;
+    }
+    public String getid() {
+        return id;
     }
 }
