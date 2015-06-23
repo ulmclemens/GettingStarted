@@ -25,7 +25,7 @@ public class Main extends Application<GettingStartedConfiguration> {
         HelloWorldResource resource = new HelloWorldResource();
         environment.jersey().register(resource);
 
-        ReportResource resource1 = new ReportResource();
+        InvoiceResource resource1 = new InvoiceResource();
         environment.jersey().register(resource1);
 
     }
